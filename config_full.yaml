@@ -1,0 +1,44 @@
+data:
+  dataset_dir: "/data/processed/embeddings/"  
+  train_path: "train.parquet"
+  val_path: "val.parquet"
+  test_path: "test.parquet"
+  file_format: "parquet"
+  user_col: "user_idx"
+  item_col: "item_idx"
+  label_col: "label_norm_repetitions"
+
+  event_features:
+    bin_artist_affinity_lt : 5
+    bin_artist_bla : 5
+    # bin_global_rank_artist : 5
+    bin_nb_artist_unique_users : 5
+    bin_indexation_date : 5
+
+model:
+  emb_size: 128
+  hidden_dims: [256, 128, 64]
+  dropout: 0.1
+
+embeddings:
+  user_embedding_path: null
+  item_embedding_path: null
+  freeze_user_embeddings: false
+  freeze_item_embeddings: false
+
+training:
+  batch_size: 512
+  lr: 1.0e-04
+  embedding_lr: null
+  weight_decay: 0.001
+  n_epochs: 500
+  checkpoint_every_n_epochs: 50
+  grad_clip_norm: 1.0
+  num_workers: 4
+  patience: 10
+  seed: 42
+  device: 'cuda'
+
+output:
+  output_dir: "runs/discovery_net"
+  model_name: "discovery_net.pt"
