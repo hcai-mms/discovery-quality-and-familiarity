@@ -8,7 +8,7 @@ https://doi.org/10.1145/3773078.3841296
 
 ### Citation
 ```bib
-@inproceedings{escobedo2026discoveyquality,
+@inproceedings{escobedo2026discoveryquality,
 author = {Escobedo, Gustavo and Bonnin, Geoffray and Schedl, Markus and Sguerra, Bruno},
 title = {Music Discovery Quality and the Value of Familiarity},
 year = {2026},
